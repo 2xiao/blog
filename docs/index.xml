@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>二小の博客</title>
+    <link>http://2xiao.github.io/blog/</link>
+    <description>Recent content on 二小の博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&lt;a href=&#39;https://github.com/2xiao/blog&#39;&gt;2xiao&lt;/a&gt; の blog</copyright><atom:link href="http://2xiao.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>README</title>
+      <link>http://2xiao.github.io/blog/readme/</link>
+      <pubDate>Sun, 14 Mar 2021 14:46:47 +0800</pubDate>
+      
+      <guid>http://2xiao.github.io/blog/readme/</guid>
+      <description>I make elegantly professional 🖥 Website and 📱 Flutter apps for a living and also Write some blogs. 🌈
+ 😜 Senior Front End Engineer at Tencent Group. 📆 3 years&#39; development working experience. 👩🏻‍🎓 Master of Electronic Science and Technology, BUPT. 🔭 Currently learning Flutter &amp;amp; Go. 🌱 Interested in economics and philosophy. 💬 Encouraging people for open source collaborations. ✍🏻 Whiting my personal thoughts about Work &amp;amp; Life in my Personal Blog.</description>
+    </item>
+    
+  </channel>
+</rss>

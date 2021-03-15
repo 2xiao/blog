@@ -1,0 +1,21 @@
+baseURL = "http://2xiao.github.io/blog"
+languageCode = "zh-cn"
+title = "二小の博客"
+theme = "github-style"
+googleAnalytics = ""
+copyright = "<a href='https://github.com/2xiao/blog'>2xiao</a> の blog"
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+publishDir = "../docs"
+
+[params]
+  author = "二小"
+  github = "2xiao"
+  description = "I have a cat."
+  utterances = "2xiao/blog"
+  rss = false
+  location = "Beijing,China"
+  lastmod = true
+
+[frontmatter]
+  lastmod = ["lastmod", ":fileModTime", ":default"]
