@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script type="application/javascript" src='https://2xiao.github.io/blog/js/theme-mode.js'></script>
+    <link rel="stylesheet" href='https://2xiao.github.io/blog/css/frameworks.min.css' />
+    <link rel="stylesheet" href='https://2xiao.github.io/blog/css/github.min.css' />
+    <link rel="stylesheet" href='https://2xiao.github.io/blog/css/github-style.css' />
+    <link rel="stylesheet" href='https://2xiao.github.io/blog/css/light.css' />
+    <link rel="stylesheet" href='https://2xiao.github.io/blog/css/dark.css' />
+    <link rel="stylesheet" href='https://2xiao.github.io/blog/css/syntax.css' />
+    <title>如何用小程序实现类原生APP下一条无限刷体验 - 二小の博客</title>
+    
+    <link rel="icon" type="image/x-icon" href='https://2xiao.github.io/blog/images/favicon.ico'>
+    
+    <meta name="theme-color" content="#1e2327">
+
+    
+    <meta name="description"
+  content="这篇文章详细记录了下一条无限刷效果的实现原理，以及细节和体验优化，并将相关代码抽象成一个微信小程序代码片段，有需要的同学可查看demo源码。
+" />
+<meta name="keywords"
+  content='' />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://2xiao.github.io/blog/post/scroll-swiper/" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="如何用小程序实现类原生APP下一条无限刷体验 - 二小の博客" />
+<meta name="twitter:description"
+  content="这篇文章详细记录了下一条无限刷效果的实现原理，以及细节和体验优化，并将相关代码抽象成一个微信小程序代码片段，有需要的同学可查看demo源码。
+" />
+<meta name="twitter:site" content="https://2xiao.github.io/blog" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image"
+  content="https://2xiao.github.io/blog">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="如何用小程序实现类原生APP下一条无限刷体验 - 二小の博客">
+<meta property="og:description"
+  content="这篇文章详细记录了下一条无限刷效果的实现原理，以及细节和体验优化，并将相关代码抽象成一个微信小程序代码片段，有需要的同学可查看demo源码。
+" />
+<meta property="og:url" content="https://2xiao.github.io/blog/post/scroll-swiper/" />
+<meta property="og:site_name" content="如何用小程序实现类原生APP下一条无限刷体验" />
+<meta property="og:image"
+  content="https://2xiao.github.io/blog">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2019-06-25 11:00:19 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+  <div style="position: relative">
+  <header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
+    <div class="Header-item mobile-none" style="margin-top: -4px; margin-bottom: -4px;">
+      <a class="Header-link" href="https://2xiao.github.io/blog">
+        <svg class="octicon" height="32" viewBox="0 0 16 16" version="1.1" width="32">
+          <path fill-rule="evenodd"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+          </path>
+        </svg>
+      </a>
+    </div>
+    <div class="Header-item d-md-none">
+      <button class="Header-link btn-link js-details-target" type="button"
+        onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'">
+        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24">
+          <path fill-rule="evenodd"
+            d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
+          </path>
+        </svg>
+      </button>
+    </div>
+    <div style="display: none;" id="header-search"
+      class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
+      <div
+        class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
+        <div class="position-relative">
+          <form target="_blank" action="https://www.google.com/search" accept-charset="UTF-8" method="get"
+            autocomplete="off">
+            <label
+              class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
+              <input type="text"
+                class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
+                name="q" value="" placeholder="Search" autocomplete="off">
+              <input type="hidden" name="q" value="site:https://2xiao.github.io/blog">
+            </label>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
+      <a class="Header-link " href="https://2xiao.github.io/blog">
+        <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1"
+          width="32">
+          <path fill-rule="evenodd"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+          </path>
+        </svg>
+      </a>
+    </div>
+    <div class="Header-item" style="margin-right: 0;">
+      <a href="javascript:void(0)" class="Header-link no-select" onclick="switchTheme()">
+        <svg style="fill: var(--color-profile-color-modes-toggle-moon);" class="no-select" viewBox="0 0 16 16"
+          version="1.1" width="16" height="16">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
+          </path>
+        </svg>
+      </a>
+    </div>
+  </header>
+</div>
+  
+<div>
+  <main>
+    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
+      <div class="px-0">
+        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
+          <div class="flex-auto min-width-0 width-fit mr-3">
+            <div class="d-flex">
+              <div class="d-none d-md-block">
+                <a class="avatar mr-2 flex-shrink-0" href="https://2xiao.github.io/blog">
+                  <img class=" avatar-user"
+                    src="https://2xiao.github.io/blog/images/avatar.png"
+                    width="32" height="32"></a>
+              </div>
+              <div class="d-flex flex-column">
+                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
+                  <span class="author">
+                    <a href="https://2xiao.github.io/blog">二小</a></span><span
+                    class="path-divider">/</span><strong class="css-truncate-target mr-1" style="max-width: 410px"><a
+                      href="https://2xiao.github.io/blog/post/scroll-swiper/">如何用小程序实现类原生APP下一条无限刷体验</a></strong>
+                </h1>
+                <div class="note m-0">
+                  Created <relative-time datetime="Tue, 25 Jun 2019 11:00:19 &#43;0800"
+                    class="no-wrap">
+                    Tue, 25 Jun 2019 11:00:19 &#43;0800</relative-time>
+
+                  
+                  <span class="file-info-divider"></span>
+                  Modified <relative-time datetime="Wed, 17 Mar 2021 11:57:16 &#43;0800"
+                    class="no-wrap">
+                    Wed, 17 Mar 2021 11:57:16 &#43;0800</relative-time>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-lg px-3 new-discussion-timeline">
+      <div class="repository-content gist-content">
+        <div>
+          <div class="js-gist-file-update-container js-task-list-container file-box">
+            <div id="file-pytest" class="file my-2">
+              <div class="file-header d-flex flex-md-items-center flex-items-start">
+                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
+                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                    2934 Words
+                    
+
+                  </div>
+                  <div class="file-actions flex-order-2 pt-0">
+                    
+                    
+                    <a class="muted-link mr-3" href="/blog/tags/javascript">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      JavaScript
+                    </a>
+                    
+                    
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="Box-body px-5 pb-5">
+                <article class="markdown-body entry-content container-lg"><p>这篇文章详细记录了下一条无限刷效果的实现原理，以及细节和体验优化，并将相关代码抽象成一个微信小程序代码片段，有需要的同学可查看demo源码。</p>
+<p><a href="https://developers.weixin.qq.com/community/develop/article/doc/0000645ae8cf882129c8b471951c13">原文链接</a></p>
+<h2 id="1背景">1.背景</h2>
+<p>如今信息流业务是各大互联网公司争先抢占的一个大面包，为了提高用户的后续消费，产品想出了各种各样的方法，例如在微视中，用户可以无限上拉出下一条视频；在知乎中，也可以无限上拉出下一条回答。这样的操作方式用户体验更好，后续消费也更多。最近几年的时间，微信小程序已经从一颗小小的萌芽成长为参天大树，形成了较大规模的生态，小程序也拥有了一个很大的流量入口。</p>
+<h2 id="2demo体验">2.demo体验</h2>
+<p>那如何才能在小程序中实现类原生APP效果的下一条无限刷体验？</p>
+<p>这篇文章详细记录了下一条无限刷效果的实现原理，以及细节和体验优化，并将相关代码抽象成一个微信小程序代码片段，有需要的同学可查看demo源码。</p>
+<p>线上效果请用微信扫码体验：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/6/27/16b96f6dfc9a5686?w=474&amp;h=482&amp;f=png&amp;s=104757" alt=""></p>
+<p>小程序demo体验请点击：<a href="https://developers.weixin.qq.com/s/vIfPUomP7f9a">https://developers.weixin.qq.com/s/vIfPUomP7f9a</a></p>
+<h2 id="3实现原理">3.实现原理</h2>
+<p>出于性能和兼容性考虑，我们尽量采用小程序官方提供的原生组件来实现下一条无限刷效果。我们发现，可以将无限上拉下一篇的文章看作一个竖向滚动的轮播图，又由于每一篇文章的内容长度高于一屏幕高度，所以需要实现文章内部可滚动，以及文章之间可以上拉和下拉切换的功能。</p>
+<p>在多次尝试后，我们最终采用了在<code>&lt;swiper&gt;</code>组件内部嵌套一个<code>&lt;scroll-view&gt;</code>组件的方式实现，利用<code>&lt;swiper&gt;</code>组件来实现文章之间上拉和下拉切换的功能，利用<code>&lt;scroll-view&gt;</code>来实现一篇文章内部可上下滚动的功能。</p>
+<p>所以页面的dom结构如下所示：</p>
+<pre><code>&lt;swiper
+  class='scroll-swiper'
+  circular=&quot;{{false}}&quot;
+  vertical=&quot;{{true}}&quot;
+  bindchange=&quot;bindChange&quot;
+  skip-hidden-item-layout=&quot;{{true}}&quot;
+  duration=&quot;{{500}}&quot;
+  easing-function=&quot;easeInCubic&quot;
+&gt;
+  &lt;block wx:for=&quot;{{articleData}}&quot;&gt;
+    &lt;swiper-item&gt;
+      &lt;scroll-view
+        scroll-top=&quot;0&quot;
+        scroll-with-animation=&quot;{{false}}&quot;
+        scroll-y
+      &gt;
+        content
+      &lt;/scroll-view&gt;
+    &lt;/swiper-item&gt;
+  &lt;/block&gt;
+&lt;/swiper&gt;
+
+</code></pre><h2 id="4性能优化">4.性能优化</h2>
+<p>我们知道view部分是运行在webview上的，所以前端领域的大多数优化方式都有用。例如减少代码包体积，使用分包，渲染性能优化等。下面主要讲一下渲染性能优化。</p>
+<h3 id="41-dom优化">4.1 dom优化</h3>
+<p>由于页面需要无限上拉刷新，所以要在<code>&lt;swiper&gt;</code>组件中不断的增加<code>&lt;swiper-item&gt;</code>，这样必然会导致页面的dom节点成倍数的增加，最后非常卡顿。</p>
+<p>为了优化页面的dom节点，我们利用<code>&lt;swiper&gt;</code>的<code>current</code>和<code>&lt;swiper-item&gt;</code>的<code>index</code>来做优化，控制是否渲染dom节点。首先，仅当<code>index &lt;= current + 1</code>时渲染<code>&lt;swiper-item&gt;</code>，也就是页面中最多预先加载出下一条，而不是将接口返回的所有后续数据都渲染出来；其次，对于用户已经消费过的之前的<code>&lt;swiper-item&gt;</code>，不能直接销毁dom节点，否则会导致<code>&lt;swiper&gt;</code>的<code>current</code>值出现错乱，但是我们可以控制是否渲染<code>&lt;swiper-item&gt;</code>内部的子节点，我们设置了仅当<code>current &lt;= index + 1 &amp;&amp; index -1 &lt;= current</code>时才会渲染<code>&lt;swiper-item&gt;</code>中的内容，也就是仅渲染当先文章，及上一篇和下一篇的文章内容，其他文章的dom节点都被销毁了。</p>
+<p>这样，无论用户上拉刷新了多少次，页面中最多只会渲染3篇文章的内容，避免了因为上拉次数太多导致的页面卡顿。</p>
+<h3 id="42-分页时setdata的优化">4.2 分页时setData的优化</h3>
+<h4 id="setdata工作原理">setData工作原理</h4>
+<p><img src="https://user-gold-cdn.xitu.io/2019/6/27/16b96f71c1e55aa6?w=1960&amp;h=1452&amp;f=jpeg&amp;s=378305" alt=""></p>
+<p>小程序的视图层目前使用<code>WebView</code>作为渲染载体，而逻辑层是由独立的 <code>JavascriptCore</code> 作为运行环境。在架构上，<code>WebView</code> 和 <code>JavascriptCore</code> 都是独立的模块，并不具备数据直接共享的通道。当前，视图层和逻辑层的数据传输，实际上通过两边提供的 <code>evaluateJavascript</code> 所实现。即用户传输的数据，需要将其转换为字符串形式传递，同时把转换后的数据内容拼接成一份 <code>JS</code> 脚本，再通过执行 <code>JS</code> 脚本的形式传递到两边独立环境。</p>
+<p>而 <code>evaluateJavascript</code> 的执行会受很多方面的影响，数据到达视图层并不是实时的。</p>
+<ul>
+<li>每次 <code>setData</code> 的调用都是一次进程间通信过程，通信开销与 setData 的数据量正相关。</li>
+<li><code>setData</code> 会引发视图层页面内容的更新，这一耗时操作一定时间中会阻塞用户交互。</li>
+<li><code>setData</code> 是小程序开发中使用最频繁的接口，也是最容易引发性能问题的接口。</li>
+</ul>
+<h4 id="避免不当使用setdata">避免不当使用setData</h4>
+<ul>
+<li><code>data</code> 应仅包括与页面渲染相关的数据，其他数据可绑定在this上。使用 <code>data</code> 在方法间共享数据，会增加 setData 传输的数据量，。</li>
+<li>使用 <code>setData</code> 传输大量数据，通讯耗时与数据正相关，页面更新延迟可能造成页面更新开销增加。仅传输页面中发生变化的数据，使用 <code>setData</code> 的特殊 <code>key</code> 实现局部更新。</li>
+<li>避免不必要的 <code>setData</code>，避免短时间内频繁调用 <code>setData</code>，对连续的setData调用进行合并。不然会导致操作卡顿，交互延迟，阻塞通信，页面渲染延迟。</li>
+<li>避免在后台页面进行 <code>setData</code>，这样会抢占前台页面的渲染资源。可将页面切入后台后的<code>setData</code>调用延迟到页面重新展示时执行。</li>
+</ul>
+<h4 id="优化示例">优化示例</h4>
+<p>无限上拉刷新的数据会采用分页接口的形式，分多次请求回来。在使用分页接口拉取到下一刷的数据后，我们需要调用<code>setData</code>将数据写进<code>data</code>的<code>articleData</code>中，这个<code>articleData</code>是一个数组，里面存放着所有的文章数据，数据量十分庞大，如果直接<code>setData</code>会增加通讯耗时和页面更新开销，导致操作卡顿，交互延迟。</p>
+<p>为了避免这个问题，我们将<code>articleData</code>改进为一个二维数组，每一次<code>setData</code>通过分页的 <code>cachedCount </code>标识来实现局部更新，具体代码如下：</p>
+<pre><code>this.setData({
+  [`articleData[${cachedCount}]`]: [...data],
+  cachedCount: cachedCount + 1,
+})
+</code></pre><p><code>articleData</code>的结构如下：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2019/6/27/16b96f75325b4cd3?w=1096&amp;h=1384&amp;f=png&amp;s=273961" alt=""></p>
+<h3 id="43-体验优化">4.3 体验优化</h3>
+<p>解决了操作卡顿，交互延迟等问题，我们还需要对动画和交互的体验进行优化，以达到类原生APP效果的体验。</p>
+<p>在文章间上拉切换时，我们使用了<code>&lt;swiper&gt;</code>组件自带的动画效果，并通过设置<code>duration</code>和<code>easing-function</code>来优化滚动细节和动画。</p>
+<p>当用户阅读文章到底部时，会提示下一篇文章的标题等信息，而在页面上拉时，由于下一篇文章的内容已经加载出来了，这样在滑动过程中会出现两个重复的标题。为了避免这种情况出现，我们通过一个占满屏幕宽高的空白<code>&lt;view&gt;</code>来将下一篇文章的内容撑出屏幕，并在滚动结束时，通过<code>hidden=&quot;{{index !== current &amp;&amp; index !== current + 1}}&quot;</code>来隐藏这个空白<code>&lt;view&gt;</code>，并对这个空白<code>&lt;view&gt;</code>的高度变化增加动画，来实现下一篇文章从屏幕底部滚动到屏幕顶部的效果：</p>
+<pre><code>.fake-scroll {
+  height: 100%;
+  width: 100%;
+  transition: height 0.3s cubic-bezier(0.167,0.167,0.4,1);
+}
+</code></pre><p><img src="https://user-gold-cdn.xitu.io/2019/6/27/16b96f786e3320d0?w=750&amp;h=1442&amp;f=png&amp;s=67753" alt=""></p>
+<p>而当用户想要上拉查看之前阅读过的文章时，我们需要给用户一个“下滑查看上一条”提示，所以也可以采用同上的方式，通过一个占满屏幕宽高的提示语<code>&lt;view&gt;</code>来将上一篇文章的内容撑出屏幕，并在滚动结束时，通过<code>wx:if=&quot;{{index + 1 === current}}&quot;</code>来隐藏这个提示语<code>&lt;view&gt;</code>，并对这个提示语<code>&lt;view&gt;</code>的透明度变化增加动画，来实现下拉时提示“下滑查看上一条”的效果：</p>
+<pre><code>.fake-previous {
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+.fake-previous.show-fake-previous {
+  opacity: 1;
+}
+</code></pre><p>至此，这个类原生APP效果的下一条无限刷体验的需求的所有要点和细节都已实现。</p>
+<p>记录在此，欢迎交流和讨论。</p>
+<p>小程序demo体验请点击：<a href="https://developers.weixin.qq.com/s/vIfPUomP7f9a">https://developers.weixin.qq.com/s/vIfPUomP7f9a</a></p></article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+  <div class="footer container-xl width-full p-responsive">
+  <div
+    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="https://2xiao.github.io/blog">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+        </path>
+      </svg>
+    </a>
+    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      
+      <li class="mr-3 mr-lg-0"><a href='https://github.com/2xiao'>2xiao</a> の blog</li>
+      
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+
+
+</div>
+</body>
+
+<script type="application/javascript" src="https://2xiao.github.io/blog/js/github-style.js"></script>
+
+
+
+</html>

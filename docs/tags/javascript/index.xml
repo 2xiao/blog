@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScript on 二小の博客</title>
+    <link>https://2xiao.github.io/blog/tags/javascript/</link>
+    <description>Recent content in JavaScript on 二小の博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&lt;a href=&#39;https://github.com/2xiao&#39;&gt;2xiao&lt;/a&gt; の blog</copyright>
+    <lastBuildDate>Tue, 25 Jun 2019 11:00:19 +0800</lastBuildDate>
+    
+	<atom:link href="https://2xiao.github.io/blog/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>【小程序】炫酷点赞动画实现方案</title>
+      <link>https://2xiao.github.io/blog/post/animation/</link>
+      <pubDate>Tue, 25 Jun 2019 11:00:19 +0800</pubDate>
+      
+      <guid>https://2xiao.github.io/blog/post/animation/</guid>
+      <description>&lt;p&gt;如何用CSS实现一个复杂的点赞动画&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>如何用小程序实现类原生APP下一条无限刷体验</title>
+      <link>https://2xiao.github.io/blog/post/scroll-swiper/</link>
+      <pubDate>Tue, 25 Jun 2019 11:00:19 +0800</pubDate>
+      
+      <guid>https://2xiao.github.io/blog/post/scroll-swiper/</guid>
+      <description>&lt;p&gt;这篇文章详细记录了下一条无限刷效果的实现原理，以及细节和体验优化，并将相关代码抽象成一个微信小程序代码片段，有需要的同学可查看demo源码。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>如何获取元素在页面中的绝对位置？</title>
+      <link>https://2xiao.github.io/blog/post/client_rect/</link>
+      <pubDate>Mon, 16 Jul 2018 11:00:19 +0800</pubDate>
+      
+      <guid>https://2xiao.github.io/blog/post/client_rect/</guid>
+      <description>&lt;p&gt;你听说过getBoundingClientRect吗？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>如何获取图片的版权信息</title>
+      <link>https://2xiao.github.io/blog/post/get_img_exif/</link>
+      <pubDate>Sun, 18 Jun 2017 10:53:37 +0800</pubDate>
+      
+      <guid>https://2xiao.github.io/blog/post/get_img_exif/</guid>
+      <description>&lt;p&gt;图片版权藏在哪儿&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

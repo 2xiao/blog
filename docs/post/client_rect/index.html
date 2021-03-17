@@ -10,7 +10,7 @@
     <link rel="stylesheet" href='https://2xiao.github.io/blog/css/light.css' />
     <link rel="stylesheet" href='https://2xiao.github.io/blog/css/dark.css' />
     <link rel="stylesheet" href='https://2xiao.github.io/blog/css/syntax.css' />
-    <title>README - 二小の博客</title>
+    <title>如何获取元素在页面中的绝对位置？ - 二小の博客</title>
     
     <link rel="icon" type="image/x-icon" href='https://2xiao.github.io/blog/images/favicon.ico'>
     
@@ -18,19 +18,19 @@
 
     
     <meta name="description"
-  content="I am a 👩‍💻 front-end engineer and a 💊 part-time philosopher.
- 💻 Senior front-end engineer at Tencent Group. 📆 3 years&amp;rsquo; development working experience. 👩🏻‍🎓 Master of Electronic Science and Technology, BUPT. 🔭 Currently learning Flutter &amp;amp; Go. 🌱 Interested in economics and philosophy. ✍🏻 Writing blog to record my work &amp;amp; life.  Skills  JavaScript / HTML / CSS React / Vue Flutter / Dart Node ( backend ) Go ( beginner )  Repo  transx: A small vue animation library." />
+  content="你听说过getBoundingClientRect吗？
+" />
 <meta name="keywords"
   content='' />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://2xiao.github.io/blog/readme/" />
+<link rel="canonical" href="https://2xiao.github.io/blog/post/client_rect/" />
 
 
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="README - 二小の博客" />
+<meta name="twitter:title" content="如何获取元素在页面中的绝对位置？ - 二小の博客" />
 <meta name="twitter:description"
-  content="I am a 👩‍💻 front-end engineer and a 💊 part-time philosopher.
- 💻 Senior front-end engineer at Tencent Group. 📆 3 years&amp;rsquo; development working experience. 👩🏻‍🎓 Master of Electronic Science and Technology, BUPT. 🔭 Currently learning Flutter &amp;amp; Go. 🌱 Interested in economics and philosophy. ✍🏻 Writing blog to record my work &amp;amp; life.  Skills  JavaScript / HTML / CSS React / Vue Flutter / Dart Node ( backend ) Go ( beginner )  Repo  transx: A small vue animation library." />
+  content="你听说过getBoundingClientRect吗？
+" />
 <meta name="twitter:site" content="https://2xiao.github.io/blog" />
 <meta name="twitter:creator" content="" />
 <meta name="twitter:image"
@@ -38,18 +38,18 @@
 
 
 <meta property="og:type" content="article" />
-<meta property="og:title" content="README - 二小の博客">
+<meta property="og:title" content="如何获取元素在页面中的绝对位置？ - 二小の博客">
 <meta property="og:description"
-  content="I am a 👩‍💻 front-end engineer and a 💊 part-time philosopher.
- 💻 Senior front-end engineer at Tencent Group. 📆 3 years&amp;rsquo; development working experience. 👩🏻‍🎓 Master of Electronic Science and Technology, BUPT. 🔭 Currently learning Flutter &amp;amp; Go. 🌱 Interested in economics and philosophy. ✍🏻 Writing blog to record my work &amp;amp; life.  Skills  JavaScript / HTML / CSS React / Vue Flutter / Dart Node ( backend ) Go ( beginner )  Repo  transx: A small vue animation library." />
-<meta property="og:url" content="https://2xiao.github.io/blog/readme/" />
-<meta property="og:site_name" content="README" />
+  content="你听说过getBoundingClientRect吗？
+" />
+<meta property="og:url" content="https://2xiao.github.io/blog/post/client_rect/" />
+<meta property="og:site_name" content="如何获取元素在页面中的绝对位置？" />
 <meta property="og:image"
   content="https://2xiao.github.io/blog">
 <meta property="og:image:width" content="2048">
 <meta property="og:image:height" content="1024">
 
-<meta property="article:published_time" content="2021-03-14 14:46:47 &#43;0800 CST" />
+<meta property="article:published_time" content="2018-07-16 11:00:19 &#43;0800 CST" />
 
 
 
@@ -144,18 +144,18 @@
                   <span class="author">
                     <a href="https://2xiao.github.io/blog">二小</a></span><span
                     class="path-divider">/</span><strong class="css-truncate-target mr-1" style="max-width: 410px"><a
-                      href="https://2xiao.github.io/blog/readme/">README</a></strong>
+                      href="https://2xiao.github.io/blog/post/client_rect/">如何获取元素在页面中的绝对位置？</a></strong>
                 </h1>
                 <div class="note m-0">
-                  Created <relative-time datetime="Sun, 14 Mar 2021 14:46:47 &#43;0800"
+                  Created <relative-time datetime="Mon, 16 Jul 2018 11:00:19 &#43;0800"
                     class="no-wrap">
-                    Sun, 14 Mar 2021 14:46:47 &#43;0800</relative-time>
+                    Mon, 16 Jul 2018 11:00:19 &#43;0800</relative-time>
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Wed, 17 Mar 2021 12:02:08 &#43;0800"
+                  Modified <relative-time datetime="Wed, 17 Mar 2021 11:57:16 &#43;0800"
                     class="no-wrap">
-                    Wed, 17 Mar 2021 12:02:08 &#43;0800</relative-time>
+                    Wed, 17 Mar 2021 11:57:16 &#43;0800</relative-time>
                   
                 </div>
               </div>
@@ -173,11 +173,22 @@
               <div class="file-header d-flex flex-md-items-center flex-items-start">
                 <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
                   <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
-                    91 Words
+                    1681 Words
                     
 
                   </div>
                   <div class="file-actions flex-order-2 pt-0">
+                    
+                    
+                    <a class="muted-link mr-3" href="/blog/tags/javascript">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      JavaScript
+                    </a>
+                    
                     
                   </div>
                 </div>
@@ -185,29 +196,113 @@
 
 
               <div class="Box-body px-5 pb-5">
-                <article class="markdown-body entry-content container-lg"><p>I am a  👩‍💻 <strong>front-end engineer</strong> and a  💊 <strong>part-time philosopher</strong>.</p>
-<ul>
-<li>💻   Senior front-end engineer at Tencent Group.</li>
-<li>📆   3 years&rsquo; development working experience.</li>
-<li>👩🏻‍🎓   Master of Electronic Science and Technology, BUPT.</li>
-<li>🔭   Currently learning Flutter &amp; Go.</li>
-<li>🌱   Interested in economics and philosophy.</li>
-<li>✍🏻   Writing <a href="https://2xiao.github.io/blog">blog</a> to record my work &amp; life.</li>
-</ul>
-<h2 id="skills">Skills</h2>
-<ul>
-<li>JavaScript / HTML / CSS</li>
-<li>React / Vue</li>
-<li>Flutter / Dart</li>
-<li>Node ( backend )</li>
-<li>Go ( beginner )</li>
-</ul>
-<h2 id="repo">Repo</h2>
-<ul>
-<li><a href="https://github.com/tnfe/transx">transx</a>: A small vue animation library.</li>
-<li><a href="https://github.com/2xiao/leetcode-js">leetcode-js</a>: LeetCode guidebook in JS.</li>
-</ul>
-</article>
+                <article class="markdown-body entry-content container-lg"><p>你听说过getBoundingClientRect吗？</p>
+<h3 id="从一个坑爹的需求说开去">从一个坑爹的需求说开去</h3>
+<p>上周产品小哥哥丢过来一个需求，名曰：沉浸式视频体验，大致内容是一个页面里有几十个视频，用户点击其中一个视频时，该视频自动滑动到屏幕可视区域的顶部开始播放，并暂停其他视频，该视频滑出屏幕可视区域之后要自动暂停。</p>
+<p>这个需求有两个关键的技术点：</p>
+<ol>
+<li>如何将视频滑动到屏幕可视区域的顶部</li>
+<li>如何判断视频滑出了屏幕可视区域</li>
+</ol>
+<p>其实这两个技术点有一个共同点，就是需求计算出元素在页面中的绝对位置，也就是指该元素的左上角相对于整张网页左上角的坐标，有两种方法可以计算得到：</p>
+<h4 id="1递归">1.递归</h4>
+<p>利用<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetTop">offsetTop</a>和<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetLeft">offsetLeft</a>可以取到当前元素左上角相对于其<code>HTMLElement.offsetParent</code>节点的左边界偏移的像素值，然后再利用<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetParent">HTMLElement.offsetParent</a>
+可以得到一个指向最近的包含该元素的定位元素。</p>
+<p>如果没有定位的元素，则<code>offsetParent</code>为最近的<code>table</code>,<code>table cell</code>或根元素（标准模式下为<code>html</code>；<code>quirks</code>模式下为<code>body</code>）。</p>
+<p>利用以上三个属性，写一个递归函数就可以得到当前元素在页面中的绝对位置了：</p>
+<pre><code>const getElementLeft = element =&gt; {
+	let actualLeft = element.offsetLeft;
+	let current = element.offsetParent;
+	while (current !== null){
+		actualLeft += current.offsetLeft;
+		current = current.offsetParent;
+	}
+	return actualLeft;
+}
+const getElementTop = element =&gt; {
+	let actualTop = element.offsetTop;
+	let current = element.offsetParent;
+	while (current !== null){
+		actualTop += current.offsetTop;
+		current = current.offsetParent;
+	}
+	return actualTop;
+}
+
+</code></pre><p>注意：由于在表格和iframe中，<code>offsetParent</code>对象未必等于父容器，所以上面的函数对于表格和iframe中的元素不适用。</p>
+<h4 id="2-你听说过getboundingclientrect吗">2. 你听说过getBoundingClientRect吗？</h4>
+<p><code>object.getBoundingClientRect()</code>的返回值包含了一组只读属性，包括该元素相对于视口左上角位置的<code>left</code>、<code>top</code>、<code>right</code>和<code>bottom</code>，以及元素的<code>width</code>和<code>height</code>，单位为像素，具体含义可参见下图：</p>
+<p><img src="http://mat1.gtimg.com/www/js/news/wemeet/rect.png" alt=""></p>
+<p>从上图可以看出，<code>getBoundingClientRect</code>得到的值是相对于视口的，而不是绝对的，当视口区域或其他可滚动元素内发生滚动操作时，top和left属性值就会随之立即发生变化。</p>
+<p>要获得相对于整个网页左上角定位的属性值，只要给top、left属性值加上当前的滚动位置（通过<code>window.scrollX</code>和<code>window.scrollY</code>），这样就可以获取与当前的滚动位置无关的值。</p>
+<h3 id="如何将视频滑动到屏幕可视区域的顶部">如何将视频滑动到屏幕可视区域的顶部？</h3>
+<p>考虑到<code>getBoundingClientRect</code>的兼容性较好，且算法复杂度较低，最终我采用了<code>getBoundingClientRect</code>方法来实现“将视频滑动到屏幕可视区域的顶部”的功能，使用<code>window.scroll</code>来实现页面滚动，使用<code>setTimeout</code>增加滚动时的动画，具体实现滚动的函数如下：</p>
+<pre><code>const autoScroll = (offsetTop, needScrollTop, hasScrollTop) =&gt; {
+	let _needScrollTop = needScrollTop; // 本次递归时，离终点的距离
+	let _hasScrollTop = hasScrollTop; // 本次递归时，已经移动的距离总和
+	const speed = 10;
+	setTimeout(() =&gt; {
+		const dist = needScrollTop &gt; 0
+			? Math.max(Math.ceil(needScrollTop / speed), 5)
+			: Math.min(Math.ceil(needScrollTop / speed), -5);
+		_needScrollTop -= dist;
+		_hasScrollTop += dist;
+		window.scroll(0, offsetTop + _hasScrollTop);
+		// 如果移动幅度小于十个像素，直接移动，否则递归调用，实现动画效果
+		if (_needScrollTop &gt; speed || _needScrollTop &lt; -speed) {
+			this.__onScroll(offsetTop, _needScrollTop, _hasScrollTop);
+		} else {
+			window.scroll(0, offsetTop + _hasScrollTop + _needScrollTop);
+		}
+	}, 1);
+}
+
+const rect = element.getBoundingClientRect();
+
+const offsetTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || window.screenY;
+
+autoScroll(offsetTop, rect.top, 0);
+
+</code></pre><h3 id="如何判断视频滑出了屏幕可视区域">如何判断视频滑出了屏幕可视区域？</h3>
+<p>利用<code>getBoundingClientRect</code>的返回值同样可以判断元素在屏幕可视区域的曝光和滑出，通过监听页面的滚动事件，在滚动结束时，触发<code>checkLeave</code>和<code>checkExpose</code>函数，具体代码如下：</p>
+<pre><code>// 检测滑出可视区域
+checkLeave() {
+	const element = document.querySelector(`[data-action-id=&quot;${this.__domId}&quot;]`);
+	if (!element) {
+		console.error(`Action: element [data-action-id=&quot;${this.__domId}&quot;] not found`);
+		return;
+	}
+	const { top, bottom, left, right } = element.getBoundingClientRect();
+	if ((top &gt; getWindowHeight() || bottom &lt; 0
+		|| left &gt; getWindowWidth() || right &lt; 0)) {
+		this.onLeave(); //onLeave函数中实现具体业务逻辑
+	}
+}
+
+// 检测真实曝光
+checkExpose() {
+	const element = document.querySelector(`[data-action-id=&quot;${this.__domId}&quot;]`);
+	if (!element) {
+		console.error(`Action: element [data-action-id=&quot;${this.__domId}&quot;] not found`);
+		return;
+	}
+	const { top, bottom, left, right } = element.getBoundingClientRect();
+	if (Math.max(0, top) &lt;= Math.min(getWindowHeight(), bottom)
+		&amp;&amp; Math.max(0, left) &lt;= Math.min(getWindowWidth(), right)) {
+		this.onExpose(); //onExpose函数中实现具体业务逻辑
+	}
+}
+
+</code></pre><p>可以将这两个事件封装成了一个<code>&lt;Action&gt;</code>组件的两个props参数，使用时只需要在需要的元素外包一层<code>&lt;Action&gt;</code>父元素，并传入特定的回调函数即可。</p>
+<p>BTW，多说一句我实现<code>document.querySelector</code>的原理，直接看代码：</p>
+<pre><code>render() {
+	const { children } = this.props;
+	return cloneElement(Children.only(children), {
+		'data-action-id': this.__domId,
+	});
+}
+
+</code></pre><p>以上。</p></article>
               </div>
             </div>
           </div>

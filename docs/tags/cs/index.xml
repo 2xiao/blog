@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CS on 二小の博客</title>
+    <link>https://2xiao.github.io/blog/tags/cs/</link>
+    <description>Recent content in CS on 二小の博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&lt;a href=&#39;https://github.com/2xiao&#39;&gt;2xiao&lt;/a&gt; の blog</copyright>
+    <lastBuildDate>Tue, 18 Jun 2019 11:00:19 +0800</lastBuildDate>
+    
+	<atom:link href="https://2xiao.github.io/blog/tags/cs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>何不食肉糜 | 机器学习自学指南</title>
+      <link>https://2xiao.github.io/blog/post/machine_learning/</link>
+      <pubDate>Tue, 18 Jun 2019 11:00:19 +0800</pubDate>
+      
+      <guid>https://2xiao.github.io/blog/post/machine_learning/</guid>
+      <description>&lt;p&gt;最近在利用业余时间学习机器学习，期间搜集整理了不少学习资料，多为斯坦福/康奈尔等大学的公开课和讲座，以及机器学习领域的英文原版书籍。私以为，相比国内各大社区里出处不明的入门教程，还是一手的权威资料讲得更加深入和准确，所以，何不食肉糜呀！&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

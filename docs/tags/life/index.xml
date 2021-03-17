@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>life on 二小の博客</title>
+    <link>https://2xiao.github.io/blog/tags/life/</link>
+    <description>Recent content in life on 二小の博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>&lt;a href=&#39;https://github.com/2xiao&#39;&gt;2xiao&lt;/a&gt; の blog</copyright>
+    <lastBuildDate>Thu, 27 Jul 2017 11:00:19 +0800</lastBuildDate>
+    
+	<atom:link href="https://2xiao.github.io/blog/tags/life/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>找工作的一些心路历程</title>
+      <link>https://2xiao.github.io/blog/post/find_job/</link>
+      <pubDate>Thu, 27 Jul 2017 11:00:19 +0800</pubDate>
+      
+      <guid>https://2xiao.github.io/blog/post/find_job/</guid>
+      <description>&lt;p&gt;这几天一直琢磨着写点东西，但是打开电脑，看到需求列表里测试又提出了几个bug，被远在上海的产品经理在群里@了好几次，瞬间脑补了她拿着一把1200千米长的砍刀架在我的脖子上，赶紧喝一口咖啡压压惊，默默搬砖去了。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>当我二十二岁时，我在想什么</title>
+      <link>https://2xiao.github.io/blog/post/diary22/</link>
+      <pubDate>Tue, 18 Oct 2016 11:00:19 +0800</pubDate>
+      
+      <guid>https://2xiao.github.io/blog/post/diary22/</guid>
+      <description>&lt;p&gt;今天起我22岁了，很多事情我已经很熟悉了，比如蓬勃的懒惰，人类的谎言，时而不时的挫败感。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>写一写十九岁</title>
+      <link>https://2xiao.github.io/blog/post/diary19/</link>
+      <pubDate>Sun, 05 Oct 2014 10:53:37 +0800</pubDate>
+      
+      <guid>https://2xiao.github.io/blog/post/diary19/</guid>
+      <description>&lt;p&gt;雨断断续续下了好几天，醒来的时候是深夜，窗外是漆黑的夜，隐约听得到大货车在楼下的街道喘着粗气，我伸手去摸床头的手机，却把一杯水打翻在地上，轻轻喘出一口气，心里一阵剧烈的不安，好像突然拥有了比别人多出来的一段时间，而这段时间，独属于我，它让我可以审照自己，旁观他人。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
