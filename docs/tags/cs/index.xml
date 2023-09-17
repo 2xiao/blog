@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>&lt;a href=&#39;https://github.com/2xiao&#39;&gt;2xiao&lt;/a&gt; の blog</copyright>
-    <lastBuildDate>Tue, 18 Jun 2019 11:00:19 +0800</lastBuildDate>
-    
-	<atom:link href="https://2xiao.github.io/blog/tags/cs/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 18 Jun 2019 11:00:19 +0800</lastBuildDate><atom:link href="https://2xiao.github.io/blog/tags/cs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>何不食肉糜 | 机器学习自学指南</title>
       <link>https://2xiao.github.io/blog/post/machine_learning/</link>

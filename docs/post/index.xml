@@ -7,10 +7,70 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>&lt;a href=&#39;https://github.com/2xiao&#39;&gt;2xiao&lt;/a&gt; の blog</copyright>
-    <lastBuildDate>Tue, 25 Jun 2019 11:00:19 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 03 Aug 2023 11:00:19 +0800</lastBuildDate><atom:link href="https://2xiao.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>密西西比自驾游</title>
+      <link>https://2xiao.github.io/blog/post/mississippi/</link>
+      <pubDate>Thu, 03 Aug 2023 11:00:19 +0800</pubDate>
+      
+      <guid>https://2xiao.github.io/blog/post/mississippi/</guid>
+      <description>&lt;p&gt;这周末去了密西西比陪亲戚看房。&lt;/p&gt;</description>
+    </item>
     
-	<atom:link href="https://2xiao.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>偶尔还是会想念北京</title>
+      <link>https://2xiao.github.io/blog/post/miss_bj/</link>
+      <pubDate>Tue, 25 Jul 2023 16:00:19 +0800</pubDate>
+      
+      <guid>https://2xiao.github.io/blog/post/miss_bj/</guid>
+      <description>&lt;p&gt;现在时常怀念以前在北京的生活，一个人，一只猫，一间房。&lt;/p&gt;</description>
+    </item>
     
+    <item>
+      <title>黑下来的印度老哥</title>
+      <link>https://2xiao.github.io/blog/post/indian/</link>
+      <pubDate>Mon, 17 Jul 2023 21:00:19 +0800</pubDate>
+      
+      <guid>https://2xiao.github.io/blog/post/indian/</guid>
+      <description>&lt;p&gt;今天去沃尔玛买菜，顺便去印度餐厅打包一个咖喱山羊肉。&lt;/p&gt;
+&lt;p&gt;坐着等餐的时候和前台的印度小哥聊起来，他说他已经来美国38个月了。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>未来去哪儿生活呢</title>
+      <link>https://2xiao.github.io/blog/post/where_to_go/</link>
+      <pubDate>Tue, 27 Jun 2023 16:00:19 +0800</pubDate>
+      
+      <guid>https://2xiao.github.io/blog/post/where_to_go/</guid>
+      <description>&lt;p&gt;最近也在和陈清扬讨论以后去哪儿生活。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>帮美国邻居搬家</title>
+      <link>https://2xiao.github.io/blog/post/neighbor/</link>
+      <pubDate>Wed, 17 May 2023 16:00:19 +0800</pubDate>
+      
+      <guid>https://2xiao.github.io/blog/post/neighbor/</guid>
+      <description>&lt;p&gt;今天帮楼上邻居搬家，顺便参观了一下他们新买的大house。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>做数字游民是一种什么样的体验</title>
+      <link>https://2xiao.github.io/blog/post/digital_nomad/</link>
+      <pubDate>Mon, 01 May 2023 16:00:19 +0800</pubDate>
+      
+      <guid>https://2xiao.github.io/blog/post/digital_nomad/</guid>
+      <description>&lt;p&gt;今天打扫卫生的时候听了一个播客：《01在巴厘岛当数字游民，不上班才是赚钱的快车道》。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在美国生活的一些感受</title>
+      <link>https://2xiao.github.io/blog/post/live_in_us/</link>
+      <pubDate>Thu, 22 Sep 2022 16:00:19 +0800</pubDate>
+      
+      <guid>https://2xiao.github.io/blog/post/live_in_us/</guid>
+      <description>&lt;p&gt;一种自由、轻松、快乐的生活方式。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>【小程序】炫酷点赞动画实现方案</title>

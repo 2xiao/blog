@@ -49,7 +49,7 @@
 <meta property="og:image:width" content="2048">
 <meta property="og:image:height" content="1024">
 
-<meta property="article:published_time" content="2019-06-25 11:00:19 &#43;0800 CST" />
+<meta property="article:published_time" content="2019-06-25 11:00:19 &#43;0800 &#43;0800" />
 
 
 
@@ -153,9 +153,9 @@
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Wed, 17 Mar 2021 11:57:16 &#43;0800"
+                  Modified <relative-time datetime="Sat, 16 Sep 2023 17:52:52 -0400"
                     class="no-wrap">
-                    Wed, 17 Mar 2021 11:57:16 &#43;0800</relative-time>
+                    Sat, 16 Sep 2023 17:52:52 -0400</relative-time>
                   
                 </div>
               </div>
@@ -180,7 +180,7 @@
                   <div class="file-actions flex-order-2 pt-0">
                     
                     
-                    <a class="muted-link mr-3" href="/blog/tags/javascript">
+                    <a class="muted-link mr-3" href="/tags/javascript">
                       <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
                         <path fill-rule="evenodd"
                           d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
@@ -217,17 +217,17 @@
 <p><img src="http://mat1.gtimg.com/www/js/news/like_icon_wx.png" alt=""></p>
 <h2 id="3代码实现">3.代码实现</h2>
 <p>使用上文提到的一张特殊的多帧点赞图作为背景</p>
-<pre><code>.agree-icon {
+<pre tabindex="0"><code>.agree-icon {
   width: 50rpx;
   height: 50rpx;
   background-repeat: no-repeat;
-  background-image: url('./like_icon.png');
+  background-image: url(&#39;./like_icon.png&#39;);
   background-position: left;
   background-size: 1400% 100%;
 }
 </code></pre><p>设置动画<code>animation-timing-function</code>的阶跃函数<code>steps()</code>，这里需要明确一下，<code>steps()</code>是一个阶跃函数，函数曲线不是连续的，因为图片一共有14张，存在13个间隔，所以，我们设置阶跃的步数为13。</p>
 <p>当用户点赞时，我们为<code>.agree-icon</code>增加一个<code>.like-active</code>的属性，此属性设置了背景图片按照<code>@keyframes plus-one</code>中所设置的样式从左往右移动，移动的动画为<code>animation-timing-function</code>所设置的13步，还可以通过设置<code>animation-duration</code>的值来控制动画的总时长。</p>
-<pre><code>.like-active {
+<pre tabindex="0"><code>.like-active {
   animation-timing-function: steps(13);
   animation-name: plus-one;
   animation-duration: .58s;
@@ -252,7 +252,7 @@
 <p><img src="http://mat1.gtimg.com/www/js/news/rocket-eg.png" alt=""></p>
 <p>接下来，只需要循环渲染出此动画元素，并且使用随机函数来控制元素有不同的大小和位置即可。</p>
 <p>具体代码如下：</p>
-<pre><code>getAniCon: function () {
+<pre tabindex="0"><code>getAniCon: function () {
   const aniCon = []
   for (let i = 0; i &lt; 21; i++) {
     const angle = (Math.random() - 0.6) * 160 // 旋转角度为左右各0-80度

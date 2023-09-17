@@ -1,84 +1,76 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://2xiao.github.io/blog/readme/</loc>
-    <lastmod>2021-03-17T12:02:08+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://2xiao.github.io/blog/</loc>
-    <lastmod>2021-03-17T12:02:08+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://2xiao.github.io/blog/tags/javascript/</loc>
-    <lastmod>2021-03-17T11:57:16+08:00</lastmod>
-  </url>
-  
   <url>
     <loc>https://2xiao.github.io/blog/post/</loc>
-    <lastmod>2021-03-17T11:57:16+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2023-09-16T22:28:21-04:00</lastmod>
+  </url><url>
     <loc>https://2xiao.github.io/blog/tags/</loc>
-    <lastmod>2021-03-17T11:57:16+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2023-09-16T22:28:21-04:00</lastmod>
+  </url><url>
+    <loc>https://2xiao.github.io/blog/</loc>
+    <lastmod>2023-09-16T22:28:21-04:00</lastmod>
+  </url><url>
+    <loc>https://2xiao.github.io/blog/post/mississippi/</loc>
+    <lastmod>2023-09-16T22:19:43-04:00</lastmod>
+  </url><url>
+    <loc>https://2xiao.github.io/blog/tags/%E7%BE%8E%E5%9B%BD%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2023-09-16T22:28:21-04:00</lastmod>
+  </url><url>
+    <loc>https://2xiao.github.io/blog/post/miss_bj/</loc>
+    <lastmod>2023-09-16T22:20:17-04:00</lastmod>
+  </url><url>
+    <loc>https://2xiao.github.io/blog/post/indian/</loc>
+    <lastmod>2023-09-16T22:19:21-04:00</lastmod>
+  </url><url>
+    <loc>https://2xiao.github.io/blog/post/where_to_go/</loc>
+    <lastmod>2023-09-16T22:20:02-04:00</lastmod>
+  </url><url>
+    <loc>https://2xiao.github.io/blog/post/neighbor/</loc>
+    <lastmod>2023-09-16T22:19:54-04:00</lastmod>
+  </url><url>
+    <loc>https://2xiao.github.io/blog/post/digital_nomad/</loc>
+    <lastmod>2023-09-16T22:17:23-04:00</lastmod>
+  </url><url>
+    <loc>https://2xiao.github.io/blog/post/live_in_us/</loc>
+    <lastmod>2023-09-16T22:28:21-04:00</lastmod>
+  </url><url>
+    <loc>https://2xiao.github.io/blog/readme/</loc>
+    <lastmod>2023-09-16T17:52:52-04:00</lastmod>
+  </url><url>
     <loc>https://2xiao.github.io/blog/post/animation/</loc>
-    <lastmod>2021-03-17T11:57:16+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2023-09-16T17:52:52-04:00</lastmod>
+  </url><url>
+    <loc>https://2xiao.github.io/blog/tags/javascript/</loc>
+    <lastmod>2023-09-16T17:52:52-04:00</lastmod>
+  </url><url>
     <loc>https://2xiao.github.io/blog/post/scroll-swiper/</loc>
-    <lastmod>2021-03-17T11:57:16+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2023-09-16T17:52:52-04:00</lastmod>
+  </url><url>
     <loc>https://2xiao.github.io/blog/tags/cs/</loc>
-    <lastmod>2021-03-17T11:57:16+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2023-09-16T17:52:52-04:00</lastmod>
+  </url><url>
     <loc>https://2xiao.github.io/blog/post/machine_learning/</loc>
-    <lastmod>2021-03-17T11:57:16+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2023-09-16T17:52:52-04:00</lastmod>
+  </url><url>
     <loc>https://2xiao.github.io/blog/post/client_rect/</loc>
-    <lastmod>2021-03-17T11:57:16+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2023-09-16T17:52:52-04:00</lastmod>
+  </url><url>
     <loc>https://2xiao.github.io/blog/tags/life/</loc>
-    <lastmod>2021-03-17T11:57:16+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2023-09-16T17:52:52-04:00</lastmod>
+  </url><url>
     <loc>https://2xiao.github.io/blog/post/find_job/</loc>
-    <lastmod>2021-03-17T11:57:16+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2023-09-16T17:52:52-04:00</lastmod>
+  </url><url>
     <loc>https://2xiao.github.io/blog/post/get_img_exif/</loc>
-    <lastmod>2021-03-17T11:57:16+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2023-09-16T17:52:52-04:00</lastmod>
+  </url><url>
     <loc>https://2xiao.github.io/blog/post/diary22/</loc>
-    <lastmod>2021-03-17T11:57:16+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2023-09-16T17:52:52-04:00</lastmod>
+  </url><url>
     <loc>https://2xiao.github.io/blog/post/diary19/</loc>
-    <lastmod>2021-03-17T11:57:16+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2023-09-16T17:52:52-04:00</lastmod>
+  </url><url>
     <loc>https://2xiao.github.io/blog/categories/</loc>
   </url>
-  
 </urlset>

@@ -49,7 +49,7 @@
 <meta property="og:image:width" content="2048">
 <meta property="og:image:height" content="1024">
 
-<meta property="article:published_time" content="2018-07-16 11:00:19 &#43;0800 CST" />
+<meta property="article:published_time" content="2018-07-16 11:00:19 &#43;0800 &#43;0800" />
 
 
 
@@ -153,9 +153,9 @@
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Wed, 17 Mar 2021 11:57:16 &#43;0800"
+                  Modified <relative-time datetime="Sat, 16 Sep 2023 17:52:52 -0400"
                     class="no-wrap">
-                    Wed, 17 Mar 2021 11:57:16 &#43;0800</relative-time>
+                    Sat, 16 Sep 2023 17:52:52 -0400</relative-time>
                   
                 </div>
               </div>
@@ -180,7 +180,7 @@
                   <div class="file-actions flex-order-2 pt-0">
                     
                     
-                    <a class="muted-link mr-3" href="/blog/tags/javascript">
+                    <a class="muted-link mr-3" href="/tags/javascript">
                       <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
                         <path fill-rule="evenodd"
                           d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
@@ -210,7 +210,7 @@
 可以得到一个指向最近的包含该元素的定位元素。</p>
 <p>如果没有定位的元素，则<code>offsetParent</code>为最近的<code>table</code>,<code>table cell</code>或根元素（标准模式下为<code>html</code>；<code>quirks</code>模式下为<code>body</code>）。</p>
 <p>利用以上三个属性，写一个递归函数就可以得到当前元素在页面中的绝对位置了：</p>
-<pre><code>const getElementLeft = element =&gt; {
+<pre tabindex="0"><code>const getElementLeft = element =&gt; {
 	let actualLeft = element.offsetLeft;
 	let current = element.offsetParent;
 	while (current !== null){
@@ -228,7 +228,6 @@ const getElementTop = element =&gt; {
 	}
 	return actualTop;
 }
-
 </code></pre><p>注意：由于在表格和iframe中，<code>offsetParent</code>对象未必等于父容器，所以上面的函数对于表格和iframe中的元素不适用。</p>
 <h4 id="2-你听说过getboundingclientrect吗">2. 你听说过getBoundingClientRect吗？</h4>
 <p><code>object.getBoundingClientRect()</code>的返回值包含了一组只读属性，包括该元素相对于视口左上角位置的<code>left</code>、<code>top</code>、<code>right</code>和<code>bottom</code>，以及元素的<code>width</code>和<code>height</code>，单位为像素，具体含义可参见下图：</p>
@@ -237,7 +236,7 @@ const getElementTop = element =&gt; {
 <p>要获得相对于整个网页左上角定位的属性值，只要给top、left属性值加上当前的滚动位置（通过<code>window.scrollX</code>和<code>window.scrollY</code>），这样就可以获取与当前的滚动位置无关的值。</p>
 <h3 id="如何将视频滑动到屏幕可视区域的顶部">如何将视频滑动到屏幕可视区域的顶部？</h3>
 <p>考虑到<code>getBoundingClientRect</code>的兼容性较好，且算法复杂度较低，最终我采用了<code>getBoundingClientRect</code>方法来实现“将视频滑动到屏幕可视区域的顶部”的功能，使用<code>window.scroll</code>来实现页面滚动，使用<code>setTimeout</code>增加滚动时的动画，具体实现滚动的函数如下：</p>
-<pre><code>const autoScroll = (offsetTop, needScrollTop, hasScrollTop) =&gt; {
+<pre tabindex="0"><code>const autoScroll = (offsetTop, needScrollTop, hasScrollTop) =&gt; {
 	let _needScrollTop = needScrollTop; // 本次递归时，离终点的距离
 	let _hasScrollTop = hasScrollTop; // 本次递归时，已经移动的距离总和
 	const speed = 10;
@@ -262,14 +261,13 @@ const rect = element.getBoundingClientRect();
 const offsetTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || window.screenY;
 
 autoScroll(offsetTop, rect.top, 0);
-
 </code></pre><h3 id="如何判断视频滑出了屏幕可视区域">如何判断视频滑出了屏幕可视区域？</h3>
 <p>利用<code>getBoundingClientRect</code>的返回值同样可以判断元素在屏幕可视区域的曝光和滑出，通过监听页面的滚动事件，在滚动结束时，触发<code>checkLeave</code>和<code>checkExpose</code>函数，具体代码如下：</p>
-<pre><code>// 检测滑出可视区域
+<pre tabindex="0"><code>// 检测滑出可视区域
 checkLeave() {
-	const element = document.querySelector(`[data-action-id=&quot;${this.__domId}&quot;]`);
+	const element = document.querySelector(`[data-action-id=&#34;${this.__domId}&#34;]`);
 	if (!element) {
-		console.error(`Action: element [data-action-id=&quot;${this.__domId}&quot;] not found`);
+		console.error(`Action: element [data-action-id=&#34;${this.__domId}&#34;] not found`);
 		return;
 	}
 	const { top, bottom, left, right } = element.getBoundingClientRect();
@@ -281,9 +279,9 @@ checkLeave() {
 
 // 检测真实曝光
 checkExpose() {
-	const element = document.querySelector(`[data-action-id=&quot;${this.__domId}&quot;]`);
+	const element = document.querySelector(`[data-action-id=&#34;${this.__domId}&#34;]`);
 	if (!element) {
-		console.error(`Action: element [data-action-id=&quot;${this.__domId}&quot;] not found`);
+		console.error(`Action: element [data-action-id=&#34;${this.__domId}&#34;] not found`);
 		return;
 	}
 	const { top, bottom, left, right } = element.getBoundingClientRect();
@@ -292,16 +290,14 @@ checkExpose() {
 		this.onExpose(); //onExpose函数中实现具体业务逻辑
 	}
 }
-
 </code></pre><p>可以将这两个事件封装成了一个<code>&lt;Action&gt;</code>组件的两个props参数，使用时只需要在需要的元素外包一层<code>&lt;Action&gt;</code>父元素，并传入特定的回调函数即可。</p>
 <p>BTW，多说一句我实现<code>document.querySelector</code>的原理，直接看代码：</p>
-<pre><code>render() {
+<pre tabindex="0"><code>render() {
 	const { children } = this.props;
 	return cloneElement(Children.only(children), {
-		'data-action-id': this.__domId,
+		&#39;data-action-id&#39;: this.__domId,
 	});
 }
-
 </code></pre><p>以上。</p></article>
               </div>
             </div>

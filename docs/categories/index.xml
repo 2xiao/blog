@@ -6,10 +6,6 @@
     <description>Recent content in Categories on 二小の博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <copyright>&lt;a href=&#39;https://github.com/2xiao&#39;&gt;2xiao&lt;/a&gt; の blog</copyright>
-    
-	<atom:link href="https://2xiao.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>&lt;a href=&#39;https://github.com/2xiao&#39;&gt;2xiao&lt;/a&gt; の blog</copyright><atom:link href="https://2xiao.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

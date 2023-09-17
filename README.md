@@ -1,0 +1,2 @@
+# setup
+`cd ./blog/website`

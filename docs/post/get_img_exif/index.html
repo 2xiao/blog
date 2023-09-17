@@ -49,7 +49,7 @@
 <meta property="og:image:width" content="2048">
 <meta property="og:image:height" content="1024">
 
-<meta property="article:published_time" content="2017-06-18 10:53:37 &#43;0800 CST" />
+<meta property="article:published_time" content="2017-06-18 10:53:37 &#43;0800 &#43;0800" />
 
 
 
@@ -153,9 +153,9 @@
 
                   
                   <span class="file-info-divider"></span>
-                  Modified <relative-time datetime="Wed, 17 Mar 2021 11:57:16 &#43;0800"
+                  Modified <relative-time datetime="Sat, 16 Sep 2023 17:52:52 -0400"
                     class="no-wrap">
-                    Wed, 17 Mar 2021 11:57:16 &#43;0800</relative-time>
+                    Sat, 16 Sep 2023 17:52:52 -0400</relative-time>
                   
                 </div>
               </div>
@@ -180,7 +180,7 @@
                   <div class="file-actions flex-order-2 pt-0">
                     
                     
-                    <a class="muted-link mr-3" href="/blog/tags/javascript">
+                    <a class="muted-link mr-3" href="/tags/javascript">
                       <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
                         <path fill-rule="evenodd"
                           d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
@@ -206,18 +206,17 @@
 <p>数字水印技术是将一些 标识信息直接嵌入多媒体、文档、软件等数字载 体中，不影响原载体的使用价值，也不容易被人的知觉系统发现。通过这些隐藏在载体中的信息，可以达到确认内容创建者、购买者、传送隐秘 信息或者判断载体是否被篡改等目的。数字水印具有隐蔽性高、可以抵抗篡改、复制、压缩、转换、 滤波、重复添加等各种攻击的优点。目前已应用 于数字信息版权保护、印刷品防伪、信息来源追溯等领域。</p>
 <h2 id="获取图片的元数据">获取图片的元数据</h2>
 <p>使用<a href="https://github.com/2xiao/getExif/blob/master/exif.js">exif.js</a>提供的方法<code>EXIF.getData(img, callback)</code>和<code>EXIF.getAllIptcTags(img)</code>，如：</p>
-<pre><code>document.getElementById(&quot;file-input&quot;).onchange = function(e) {
+<pre tabindex="0"><code>document.getElementById(&#34;file-input&#34;).onchange = function(e) {
     EXIF.getData(e.target.files[0], function() {
         var IptcObject = EXIF.getAllIptcTags(this);
-        var IptcString = &quot;&quot;;
+        var IptcString = &#34;&#34;;
         for(var tag in IptcObject){
         	var IptcText = IptcObject[tag];
-        	IptcString += tag + &quot; = &quot; + IptcText + &quot;&lt;br&gt;&quot;;
+        	IptcString += tag + &#34; = &#34; + IptcText + &#34;&lt;br&gt;&#34;;
         }
-        document.getElementById(&quot;output&quot;).innerHTML = IptcString;
+        document.getElementById(&#34;output&#34;).innerHTML = IptcString;
     });
 }
-
 </code></pre><p>如图，要读取图片的IPTC信息：
 <img src="http://ww4.sinaimg.cn/large/006tNc79ly1fftwu9cvqfj30p00iyn1x.jpg" alt=""></p>
 <p><strong>提取出的版权信息为：</strong></p>
@@ -233,8 +232,8 @@
 </blockquote>
 <h2 id="中文编码乱码">中文编码乱码</h2>
 <p>在<a href="https://github.com/2xiao/getExif/blob/master/exif.js">exif.js</a>中，方法<code>readIPTCData()</code>中，返回值<code>fieldValue</code>由方法<code>getFinalStringFromDB()</code>得到，这个方法的作用是获取到图片中存储IPTC信息的位置信息后，对字节信息进行编码，得到字符信息，但是编码时需要对中英文字符分开处理。</p>
-<pre><code>function getFinalStringFromDB(buffer, start, length) {
-    var outstr = &quot;&quot;;
+<pre tabindex="0"><code>function getFinalStringFromDB(buffer, start, length) {
+    var outstr = &#34;&#34;;
     for (n = start; n &lt; start+length; ) {
         if(buffer.getUint8(n)&lt;127){
             outstr += String.fromCharCode(buffer.getUint8(n));
@@ -250,10 +249,9 @@
     }
     return outstr
 }
-
 </code></pre><p>如果直接getUint8()，getUint8()每8个比特提取为一个字，非汉字是正确的，但是直接将汉字分为两个Unicode，则图片中的汉字被编译成拉丁文</p>
-<pre><code>function getStringFromDB(buffer, start, length) {
-    var outstr = &quot;&quot;;
+<pre tabindex="0"><code>function getStringFromDB(buffer, start, length) {
+    var outstr = &#34;&#34;;
     for (n = start; n &lt; start+length; n++) {
         outstr += String.fromCharCode(buffer.getUint8(n));
     }
@@ -268,10 +266,9 @@
 // category = 18
 // caption = ÐÂ»ªÉçÕÕÆ¬£¬±±¾©£¬2017Äê5ÔÂ12ÈÕ Ï°½üÆ½»á¼û²¨À¼×ÜÀíÏ£µÂÎÖ 5ÔÂ12ÈÕ£¬¹ú¼ÒÖ÷Ï¯Ï°½üÆ½ÔÚ±±¾©ÈËÃñ´ó»áÌÃ»á¼ûÀ´»ª³öÏ¯¡°Ò»´øÒ»Â·¡±¹ú¼ÊºÏ×÷¸ß·åÂÛÌ³µÄ²¨À¼×ÜÀíÏ£µÂÎÖ¡£ ÐÂ»ªÉç¼ÇÕß Ð»»·³Û Éã
 // byline = Ð»»·³Û
-
 </code></pre><p>如果直接getUint16()，则每16个比特提取为一个字，能提取出汉字，但是对应关系错误，因为此时还没有修改<code>n</code>，相当于每次还只向后挪动8bytes，所以还要修改<code>n</code>和<code>length</code>：</p>
-<pre><code>function getFinalStringFromDB(buffer, start, length) {
-    var outstr = &quot;&quot;;
+<pre tabindex="0"><code>function getFinalStringFromDB(buffer, start, length) {
+    var outstr = &#34;&#34;;
     length = length/2;
     for (n = start; n &lt; start+length; ) {
         var buffer10 = buffer.getUint16(n);
@@ -291,8 +288,8 @@
 // caption = 新禄华社缯照掌片北本京年月日习敖近平交会峒见波兰甲总芾理硐希德挛沃月日眨国家抑主飨席习敖近平皆在诒北本京
 // byline = 谢换环
 </code></pre><p>修改n和length，因为n的位置应该向后移动两个比特，所以作出修改，此时汉字部分正确，但是非汉字部分解码错误</p>
-<pre><code>function getFinalStringFromDB(buffer, start, length) {
-    var outstr = &quot;&quot;;
+<pre tabindex="0"><code>function getFinalStringFromDB(buffer, start, length) {
+    var outstr = &#34;&#34;;
     for (n = start; n &lt; start+length; ) {
         var buffer10 = buffer.getUint16(n);
         var buffer16 = buffer10.toString(16).toUpperCase();
@@ -312,8 +309,8 @@
 // caption = 新华社照片北京年习近平会见波兰总理希德沃月日国家主席习近平在北京人民大会堂会见来华出席一带一路国际合作高峰论坛的波兰总理希德沃禄缂钦谢环驰
 // byline = 谢环驰
 </code></pre><p>修改if判断，对应关系是两个拉丁文字符对应一个汉字，一个汉字占16比特，一个非汉字只占8比特，所以要进行判断，当<code>Unicode&gt;127</code>时，代表此处和后面的8bytes组成一个汉字，当<code>Unicode&lt;127</code>时，代表此处是英文字符。</p>
-<pre><code>function getFinalStringFromDB(buffer, start, length) {
-    var outstr = &quot;&quot;;
+<pre tabindex="0"><code>function getFinalStringFromDB(buffer, start, length) {
+    var outstr = &#34;&#34;;
     for (n = start; n &lt; start+length; ) {
         if(buffer.getUint8(n)&lt;127){
             outstr += String.fromCharCode(buffer.getUint8(n));
@@ -337,7 +334,6 @@
 // category = 18
 // caption = 新华社照片北京2017年5月12日 习近平会见波兰总理希德沃 5月12日国家主席习近平在北京人民大会堂会见来华出席一带一路国际合作高峰论坛的波兰总理希德沃 新华社记者 谢环驰 摄
 // byline = 谢环驰
-
 </code></pre><p>至此，成功解决了中文编码乱码的问题。</p></article>
               </div>
             </div>
